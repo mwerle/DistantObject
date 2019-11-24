@@ -335,7 +335,7 @@ namespace DistantObject
                     {
                         if (DistantObjectSettings.debugMode)
                         {
-                            Debug.LogError(Constants.DistantObjectShort + " -- Could not find ConfigNode for part " + urlConfig.name + ".  Part will not render for VesselDraw.");
+                            Debug.LogWarning(Constants.DistantObjectShort + " -- Could not find ConfigNode for part " + urlConfig.name + ".  Part will not render for VesselDraw.");
                         }
                         sawErrors = true;
                     }
@@ -344,7 +344,7 @@ namespace DistantObject
                 print(Constants.DistantObject + " -- VesselDraw initialized");
                 if (sawErrors)
                 {
-                    Debug.LogError(Constants.DistantObjectShort + " -- Some parts do not have ConfigNode entries in the game database.  Some distant vessels will be missing pieces.");
+                    Debug.LogWarning(Constants.DistantObjectShort + " -- Some parts do not have ConfigNode entries in the game database.  Some distant vessels will be missing pieces.");
                 }
             }
             else if (DistantObjectSettings.debugMode)
