@@ -71,7 +71,7 @@ namespace DistantObject
         {
             if (DistantObjectSettings.debugMode)
             {
-                Debug.Log(Constants.DistantObject + " -- SettingsGui OnDestroy - " + this.GetInstanceID());
+                Debug.Log(Constants.DistantObjectShort + " -- SettingsGui OnDestroy - " + this.GetInstanceID());
             }
 
             if (buttonDOSettings != null)

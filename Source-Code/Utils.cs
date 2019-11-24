@@ -88,6 +88,14 @@ namespace DistantObject
                 return _DistantObject;
             }
         }
+
+        static public string DistantObjectShort
+        {
+            get
+            {
+                return "[DOE]";
+            }
+        }
     }
 
     class DistantObjectSettings

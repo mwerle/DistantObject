@@ -70,7 +70,7 @@ namespace DistantObject
 
         ~BodyFlare()
         {
-            //Debug.Log(Constants.DistantObject + string.Format(" -- BodyFlare {0} Destroy", (body != null) ? body.name : "(null bodyflare?)"));
+            //Debug.Log(Constants.DistantObjectShort + string.Format(" -- BodyFlare {0} Destroy", (body != null) ? body.name : "(null bodyflare?)"));
         }
     }
 
@@ -109,7 +109,7 @@ namespace DistantObject
                     float resizeFactor = (0.002f * targetDist * brightness * (0.7f + .99f * camFOV) / 70.0f) * DistantObjectSettings.DistantFlare.flareSize;
 
                     flareMesh.transform.localScale = new Vector3(resizeFactor, resizeFactor, resizeFactor);
-                    //Debug.Log(string.Format("Resizing vessel flare {0} to {1} - brightness {2}, luminosity {3}", referenceShip.vesselName, resizeFactor, brightness, luminosity));
+                    //Debug.Log(Constants.DistantObjectShort + string.Format("Resizing vessel flare {0} to {1} - brightness {2}, luminosity {3}", referenceShip.vesselName, resizeFactor, brightness, luminosity));
                 }
             }
             catch
@@ -123,7 +123,7 @@ namespace DistantObject
         ~VesselFlare()
         {
             // Why is this never called?
-            //Debug.Log(Constants.DistantObject + string.Format(" -- VesselFlare {0} Destroy", (referenceShip != null) ? referenceShip.vesselName : "(null vessel?)"));
+            //Debug.Log(Constants.DistantObjectShort + string.Format(" -- VesselFlare {0} Destroy", (referenceShip != null) ? referenceShip.vesselName : "(null vessel?)"));
         }
     }
 
@@ -378,7 +378,7 @@ namespace DistantObject
                 long addNew = stopwatch.ElapsedMilliseconds;
                 stopwatch.Stop();
 
-                UnityEngine.Debug.Log(string.Format(Constants.DistantObject + " -- GenerateVesselFlares net ms: scanDead = {0}, clearDead = {1}, addNew = {2} - {3} flares tracked",
+                UnityEngine.Debug.Log(string.Format(Constants.DistantObjectShort + " -- GenerateVesselFlares net ms: scanDead = {0}, clearDead = {1}, addNew = {2} - {3} flares tracked",
                     scanDead, clearDead, addNew, vesselFlares.Count));
 #endif
         }
@@ -657,17 +657,17 @@ namespace DistantObject
                 }
                 else
                 {
-                    UnityEngine.Debug.LogWarning(Constants.DistantObject + " -- Unable to find situation '" + sit + "' in my known situations atlas");
+                    UnityEngine.Debug.LogWarning(Constants.DistantObjectShort + " -- Unable to find situation '" + sit + "' in my known situations atlas");
                 }
             }
 
             if (DistantObjectSettings.DistantFlare.flaresEnabled)
             {
-                UnityEngine.Debug.Log(Constants.DistantObject + " -- FlareDraw enabled");
+                UnityEngine.Debug.Log(Constants.DistantObjectShort + " -- FlareDraw enabled");
             }
             else
             {
-                UnityEngine.Debug.Log(Constants.DistantObject + " -- FlareDraw disabled");
+                UnityEngine.Debug.Log(Constants.DistantObjectShort + " -- FlareDraw disabled");
             }
 
             sunRadiusSquared = FlightGlobals.Bodies[0].Radius * FlightGlobals.Bodies[0].Radius;
@@ -751,7 +751,7 @@ namespace DistantObject
         {
             if (DistantObjectSettings.debugMode)
             {
-                UnityEngine.Debug.Log(Constants.DistantObject + " -- FixedUpdate");
+                UnityEngine.Debug.Log(Constants.DistantObjectShort + " -- FixedUpdate");
             }
 
             if (DistantObjectSettings.DistantFlare.flaresEnabled && !MapView.MapIsEnabled)
@@ -828,7 +828,7 @@ namespace DistantObject
 
                     if (DistantObjectSettings.debugMode)
                     {
-                        UnityEngine.Debug.Log(Constants.DistantObject + " -- Update");
+                        UnityEngine.Debug.Log(Constants.DistantObjectShort + " -- Update");
                     }
 
                     foreach (BodyFlare flare in bodyFlares)
@@ -875,7 +875,7 @@ namespace DistantObject
                     long updateName = stopwatch.ElapsedMilliseconds;
                     stopwatch.Stop();
 
-                    UnityEngine.Debug.Log(string.Format(Constants.DistantObject + " -- Update net ms: bodyCheckdraw = {0}, updateVar = {1}, vesselCheckdraw = {2}, updateName = {3}",
+                    UnityEngine.Debug.Log(string.Format(Constants.DistantObjectShort + " -- Update net ms: bodyCheckdraw = {0}, updateVar = {1}, vesselCheckdraw = {2}, updateName = {3}",
                         bodyCheckdraw, updateVar, vesselCheckdraw,updateName));
 #endif
                 }
